@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.bank.dao.TeacherDao">
+    <resultMap id="teaMap" type="com.project.bank.dto.Teacher">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+    <select id="getTeacherById" parameterType="com.project.bank.dto.Teacher" resultMap="teaMap">
+        select * from teacher where id = #{id}
+    </select>
+    <select id="selById" resultType="com.project.bank.dto.Teacher" parameterType="com.project.bank.dto.Teacher">
+        select * from teacher where id=#{id}
+    </select>
+</mapper>
